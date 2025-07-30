@@ -1,4 +1,4 @@
-.button
+.primary
   background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)
   color: white
   padding: 0.75rem 1.5rem
@@ -25,3 +25,31 @@
     cursor: not-allowed
     box-shadow: none
     color: #666666
+
+.secondary
+  background-color: #f44336
+  color: white
+  padding: 0.75rem 1.5rem
+  border: none
+  border-radius: 8px
+  font-size: 1rem
+  font-weight: 600
+  cursor: pointer
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4)
+  transition: background-color 0.3s ease, box-shadow 0.3s ease
+  user-select: none
+
+  &:hover
+    background-color: #d32f2f
+    box-shadow: 0 6px 18px rgba(211, 47, 47, 0.6)
+
+  &:active
+    background-color: #b71c1c
+    box-shadow: 0 2px 10px rgba(183, 28, 28, 0.7)
+    transform: translateY(1px)
+
+  &:disabled
+    background-color: #e0a9a8
+    cursor: not-allowed
+    box-shadow: none
+    color: #f9d6d5

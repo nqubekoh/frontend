@@ -3,6 +3,7 @@ import styles from './personal-information.module.sass';
 import { useApplicationContext } from '../../context/ApplicationContext';
 import {PersonalInformation} from "../../model/personal-information";
 import {createFormChangeHandler} from "../../service/method";
+import {Button} from "../../packages/ui-components/Button";
 
 type Props = {
     onNext: () => void;
@@ -59,10 +60,7 @@ export const PersonalInformationComponent = ({ onBack, onNext }: Props) => {
 
     return (
         <div className={styles.wrapper}>
-            <h2>Personal Information</h2>
-
-            <p><strong>Email:</strong> {application.basicInformation.email}</p>
-            <p><strong>ID Number:</strong> {application.basicInformation.idNumber}</p>
+            <h1>Personal Information</h1>
 
             <form onSubmit={handleSubmit}>
                 <div className={styles.formGroup}>
@@ -95,9 +93,12 @@ export const PersonalInformationComponent = ({ onBack, onNext }: Props) => {
                     />
                 </div>
 
+                <p><strong>Email:</strong> {application.basicInformation.email}</p>
+                <p><strong>ID Number:</strong> {application.basicInformation.idNumber}</p>
+
                 <div className={styles.buttonGroup}>
-                    <button type="button" onClick={handleBack}>Back</button>
-                    <button type="submit" onClick={handleSubmit}>Submit</button>
+                    <Button type="button"  variant="secondary" onClick={handleBack}>Back</Button>
+                    <Button type="submit" variant="primary" onClick={handleSubmit}>Submit</Button>
                 </div>
             </form>
         </div>

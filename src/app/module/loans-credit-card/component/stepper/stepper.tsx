@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import BasicInformationComponent from '../basic-information/basic-information';
-import PersonalInformationComponent from '../personal-information/personal-information';
 import styles from './stepper.module.sass';
+import BasicInformationComponent from "../basic-information/basic-information";
+import PersonalInformationComponent from "../personal-information/personal-information";
+
 
 const Stepper = () => {
     const [currentStep, setCurrentStep] = useState(0);
@@ -14,7 +15,7 @@ const Stepper = () => {
     return (
         <div className={styles.container}>
             <div className={styles.sidebar}>
-                <h3> Retail-CASA </h3>
+                <h3> Loans & Cards </h3>
                 {steps.map((step, index) => {
                     const isActive = index === currentStep;
                     const isCompleted = index < currentStep;

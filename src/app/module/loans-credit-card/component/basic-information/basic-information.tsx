@@ -1,7 +1,9 @@
-import styles from "./basic-information-style.module.sass";
-
-const BasicInformationComponent = () => {
-const title = 'Loans and Credit Card';
+import styles from "./basic-information.module.sass";
+type Props = {
+    onNext: () => void;
+};
+const BasicInformationComponent = ({ onNext }: Props) => {
+const title = 'Basic Information';
 
 // Add more logic, hooks, API calls, etc. here
 

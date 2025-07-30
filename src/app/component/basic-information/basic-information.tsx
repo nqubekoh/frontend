@@ -3,14 +3,15 @@ import { useState } from "react";
 import { BasicInformation } from "../../model/basic-information";
 import styles from "./basic-information.module.sass";
 import { createFormChangeHandler } from "../../service/method";
-import Input from "../../packages/ui-components/Input/Input"; // ✅ Import your component
+import Input from "../../packages/ui-components/Input/Input";
+import {Button} from "../../packages/ui-components/Button"; // ✅ Import your component
 
 type Props = {
     onNext: () => void;
 };
 
 const BasicInformationComponent = ({ onNext }: Props) => {
-    const title = 'Retail CASA Banking';
+    const title = 'Basic Information';
 
     const { application, setApplication } = useApplicationContext();
 
@@ -66,7 +67,7 @@ const BasicInformationComponent = ({ onNext }: Props) => {
                 />
 
                 <div className={styles.buttonGroup}>
-                    <button type="submit">Next</button>
+                    <Button type="submit">Next</Button>
                 </div>
             </form>
         </div>
