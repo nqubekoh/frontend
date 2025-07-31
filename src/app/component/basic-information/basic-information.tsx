@@ -4,7 +4,8 @@ import { BasicInformation } from "../../model/basic-information";
 import styles from "./basic-information.module.sass";
 import { createFormChangeHandler } from "../../service/method";
 import Input from "../../packages/ui-components/Input/Input";
-import {Button} from "../../packages/ui-components/Button"; // ✅ Import your component
+import {Button} from "../../packages/ui-components/Button";
+import {useTranslation} from "react-i18next"; // ✅ Import your component
 
 type Props = {
     onNext: () => void;
@@ -34,13 +35,13 @@ const BasicInformationComponent = ({ onNext }: Props) => {
 
     const handleChange = (key: keyof BasicInformation, value: string) =>
         createFormChangeHandler(setFormData)(key, value);
-
+    const { t } = useTranslation();
     return (
         <div className={styles.wrapper}>
             <h1>{title}</h1>
             <form onSubmit={handleSubmit}>
                 <Input
-                    label="ID Number:"
+                    label={t('idNumber')}
                     name="idNumber"
                     type="number"
                     value={formData.idNumber}
@@ -49,7 +50,7 @@ const BasicInformationComponent = ({ onNext }: Props) => {
                 />
 
                 <Input
-                    label="Email address:"
+                    label={t('email')}
                     name="email"
                     type="email"
                     value={formData.email}
@@ -58,7 +59,7 @@ const BasicInformationComponent = ({ onNext }: Props) => {
                 />
 
                 <Input
-                    label="Mobile number:"
+                    label={t('mobileNumber')}
                     name="mobileNumber"
                     type="number"
                     value={formData.mobileNumber}

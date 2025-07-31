@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+}
+
+.main-content {
+  flex: 1; /* fill all vertical space to push footer down */
+  padding: 1rem;
+}

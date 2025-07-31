@@ -93,8 +93,16 @@ export const PersonalInformationComponent = ({ onBack, onNext }: Props) => {
                     />
                 </div>
 
-                <p><strong>Email:</strong> {application.basicInformation.email}</p>
-                <p><strong>ID Number:</strong> {application.basicInformation.idNumber}</p>
+                <br/>
+                <h3>Basic Information</h3>
+                <div className={styles.row}>
+                    <div className={styles.column}>
+                        <p><strong>Email:</strong> {application.basicInformation.email}</p>
+                    </div>
+                    <div className={styles.column}>
+                        <p><strong>ID Number:</strong> {application.basicInformation.idNumber}</p>
+                    </div>
+                </div>
 
                 <div className={styles.buttonGroup}>
                     <Button type="button"  variant="secondary" onClick={handleBack}>Back</Button>
